@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @my_property.property %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @my_property.rent %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @my_property.adress %>
+</p>
+
+<p>
+  <strong>Building age:</strong>
+  <%= @my_property.building_age %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @my_property.remarks %>
+</p>
+<% @my_property.statons.each do |poor| %>
+  <% if @my_property.id == poor.my_property_id %>
+    <h2><b>Nearest staton </b></h2>
+    <p>
+      <strong>Name of railway line:</strong>
+      <%= poor.name_of_railway_line %>
+    </p>
+
+    <p>
+      <strong>Statation name:</strong>
+      <%= poor.statation_name %>
+    </p>
+
+    <p>
+      <strong>How many minutes walks:</strong>
+      <%= poor.how_many_minutes_walks %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_my_property_path(@my_property) %> |
+<%= link_to 'Back', my_properties_path %>

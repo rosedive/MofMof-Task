@@ -1,0 +1,37 @@
+<%= form_for(staton) do |f| %>
+  <% if staton.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(staton.errors.count, "error") %> prohibited this staton from being saved:</h2>
+
+      <ul>
+      <% staton.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_of_railway_line %>
+    <%= f.text_field :name_of_railway_line %>
+  </div>
+
+  <div class="field">
+    <%= f.label :statation_name %>
+    <%= f.text_field :statation_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :how_many_minutes_walks %>
+    <%= f.text_field :how_many_minutes_walks %>
+  </div>
+
+  <div class="field">
+    <%= f.label :my_property_id %>
+    <%= f.text_field :my_property_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
